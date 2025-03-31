@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS tbl_estados_brasil (
-    id PRIMARY KEY AUTOINCREMENT,
+    id INTEGER PRIMARY KEY,
     uf VARCHAR (50),
     nome_estado VARCHAR (50)
 );
