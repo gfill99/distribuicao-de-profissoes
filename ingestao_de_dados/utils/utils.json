@@ -27,6 +27,6 @@
         {"id": 25, "uf": "SC", "nome_estado": "Santa Catarina"},
         {"id": 26, "uf": "SE", "nome_estado": "Sergipe"},
         {"id": 27, "uf": "SP", "nome_estado": "São Paulo"},
-        {"id": 28, "uf": "TO", "nome_estado": "Tocantis"}
+        {"id": 28, "uf": "TO", "nome_estado": "Tocantins"}
         ]
 }
