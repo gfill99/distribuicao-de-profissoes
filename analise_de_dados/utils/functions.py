@@ -1,6 +1,7 @@
 import duckdb as db
 import matplotlib.pyplot as plt
 import numpy as np
+import os
 
 con = db.connect("../../ingestao_de_dados/database/db_distribuicao_profissoes.db")
 
@@ -136,3 +137,20 @@ def plot_top5_profissao(df, coluna_valor, titulo, cor):
     ax.invert_yaxis()  # Coloca o maior valor no topo
     plt.tight_layout()
     plt.show()
+
+def salvar_json(dataframes, pasta_resultados='../result'):
+    # Caminho correto para a pasta result
+    caminho_pasta = os.path.join(os.getcwd(), pasta_resultados)
+    
+    # Salvando os dataframes como arquivos JSON
+    for nome, df in dataframes.items():
+        # Definindo o caminho completo para o arquivo JSON
+        caminho_arquivo = os.path.join(caminho_pasta, f"{nome}.json")
+        
+        # Convertendo o dataframe para JSON e salvando
+        json_data = df.to_json(orient='records', force_ascii=False, indent=4)
+        
+        # Gravando o JSON no arquivo
+        with open(caminho_arquivo, 'w', encoding='utf-8') as f:
+            f.write(json_data)
+        print(f"Arquivo {nome}.json salvo em {caminho_arquivo}")

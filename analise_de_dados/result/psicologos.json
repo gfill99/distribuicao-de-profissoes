@@ -1,0 +1,22 @@
+[
+    {
+        "nome_estado":"São Paulo",
+        "total_psicologos":154690
+    },
+    {
+        "nome_estado":"Rio de Janeiro",
+        "total_psicologos":59158
+    },
+    {
+        "nome_estado":"Minas Gerais",
+        "total_psicologos":57498
+    },
+    {
+        "nome_estado":"Paraná",
+        "total_psicologos":31757
+    },
+    {
+        "nome_estado":"Rio Grande do Sul",
+        "total_psicologos":31681
+    }
+]

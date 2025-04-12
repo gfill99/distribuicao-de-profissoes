@@ -1,0 +1,22 @@
+[
+    {
+        "nome_estado":"São Paulo",
+        "total":181116
+    },
+    {
+        "nome_estado":"Rio de Janeiro",
+        "total":74423
+    },
+    {
+        "nome_estado":"Minas Gerais",
+        "total":69942
+    },
+    {
+        "nome_estado":"Rio Grande do Sul",
+        "total":47028
+    },
+    {
+        "nome_estado":"Paraná",
+        "total":44869
+    }
+]

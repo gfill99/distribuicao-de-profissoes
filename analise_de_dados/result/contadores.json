@@ -1,0 +1,22 @@
+[
+    {
+        "nome_estado":"São Paulo",
+        "total_contadores":105830
+    },
+    {
+        "nome_estado":"Rio de Janeiro",
+        "total_contadores":38143
+    },
+    {
+        "nome_estado":"Minas Gerais",
+        "total_contadores":36471
+    },
+    {
+        "nome_estado":"Paraná",
+        "total_contadores":27960
+    },
+    {
+        "nome_estado":"Rio Grande do Sul",
+        "total_contadores":25996
+    }
+]
