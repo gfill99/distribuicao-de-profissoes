@@ -18,5 +18,13 @@
     {
         "nome_estado":"Paraná",
         "total_advogados":91891
+    },
+    {
+        "nome_estado":"Bahia",
+        "total_advogados":61935
+    },
+    {
+        "nome_estado":"Goiás",
+        "total_advogados":53791
     }
 ]

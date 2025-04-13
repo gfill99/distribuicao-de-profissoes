@@ -18,5 +18,13 @@
     {
         "nome_estado":"Rio Grande do Sul",
         "total_psicologos":31681
+    },
+    {
+        "nome_estado":"Bahia",
+        "total_psicologos":24672
+    },
+    {
+        "nome_estado":"Santa Catarina",
+        "total_psicologos":20702
     }
 ]

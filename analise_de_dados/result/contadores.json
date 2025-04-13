@@ -18,5 +18,13 @@
     {
         "nome_estado":"Rio Grande do Sul",
         "total_contadores":25996
+    },
+    {
+        "nome_estado":"Santa Catarina",
+        "total_contadores":19056
+    },
+    {
+        "nome_estado":"Bahia",
+        "total_contadores":16811
     }
 ]

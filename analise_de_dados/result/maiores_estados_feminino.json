@@ -38,5 +38,21 @@
         "engenheiras":13595.0,
         "psicologas":27062.0,
         "total_feminino":103612.0
+    },
+    {
+        "nome_estado":"Bahia",
+        "advogadas":33281.0,
+        "contadoras":9497.0,
+        "engenheiras":12202.0,
+        "psicologas":21113.0,
+        "total_feminino":76093.0
+    },
+    {
+        "nome_estado":"Santa Catarina",
+        "advogadas":27023.0,
+        "contadoras":9728.0,
+        "engenheiras":10400.0,
+        "psicologas":17963.0,
+        "total_feminino":65114.0
     }
 ]

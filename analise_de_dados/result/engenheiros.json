@@ -18,5 +18,13 @@
     {
         "nome_estado":"Rio Grande do Sul",
         "total_engenheiros":68162
+    },
+    {
+        "nome_estado":"Bahia",
+        "total_engenheiros":51638
+    },
+    {
+        "nome_estado":"Santa Catarina",
+        "total_engenheiros":47872
     }
 ]

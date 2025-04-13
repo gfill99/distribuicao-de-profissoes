@@ -38,5 +38,21 @@
         "engenheiros":54101.0,
         "psicologos":4001.0,
         "total_masculino":118748.0
+    },
+    {
+        "nome_estado":"Bahia",
+        "advogados":28654.0,
+        "contadores":7314.0,
+        "engenheiros":39436.0,
+        "psicologos":3559.0,
+        "total_masculino":78963.0
+    },
+    {
+        "nome_estado":"Santa Catarina",
+        "advogados":25110.0,
+        "contadores":9328.0,
+        "engenheiros":37472.0,
+        "psicologos":2739.0,
+        "total_masculino":74649.0
     }
 ]
