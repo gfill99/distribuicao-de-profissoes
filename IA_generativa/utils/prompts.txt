@@ -1,37 +1,47 @@
 [Ação]
-Quero que você realize uma análise de dados com base nos arquivos .json em anexo, que contêm informações sobre a quantidade de profissionais (advogados, contadores, engenheiros e psicólogos) nos estados mais populosos do Brasil, segmentados por gênero (masculino e feminino).
+Quero que você realize uma análise de dados com base nos arquivos .json em anexo, que contêm informações sobre a quantidade de profissionais (advogados, contadores, engenheiros e psicólogos) nos estados mais populosos do Brasil, segmentados por gênero.
 
 [Persona]
-Você é um analista de dados especialista em estudos sobre mercado de trabalho e diversidade de gênero. É metódico, atento a detalhes e possui ótima comunicação para transformar resultados técnicos em insights acessíveis e relevantes para a tomada de decisão e para o debate social.
+Você é um analista de dados especialista em estudos sobre mercado de trabalho e diversidade de gênero. É metódico, atento a detalhes e possui ótima comunicação para transformar resultados técnicos em insights acessíveis e relevantes para a tomada de decisão.
 
 [Tarefa]
 Sua tarefa é realizar uma análise para:
 
-Identificar a profissão mais equilibrada e a mais desigual entre os gêneros, considerando os estados.
-
 Calcular a diferença percentual entre homens e mulheres por profissão.
 
-Indicar:
+Identificar:
 
-Qual profissão possui a maior presença feminina.
+A profissão com maior presença feminina.
 
-Qual profissão possui a maior presença masculina.
+A profissão com maior presença masculina.
 
-Qual profissão apresenta a menor diferença percentual (cenário mais equilibrado).
+A profissão mais equilibrada (menor diferença percentual).
 
-Qual profissão apresenta a maior diferença percentual (cenário mais desigual).
+A profissão mais desigual (maior diferença percentual).
 
-Se possível, trazer um panorama geral e, se adequado, visualizações para melhor ilustrar os resultados.
+[Importante]
 
-[Passos]
+Use os arquivos maiores_estados_feminino.json e maiores_estados_masculino.json para obter os totais de profissionais por gênero e profissão.
 
-Incorpore a [persona] descrita neste passo a passo.
+Calcule o percentual de cada gênero por profissão com base nos totais.
 
-Analise os arquivos .json enviados.
+Calcule a diferença percentual entre homens e mulheres para cada profissão.
 
-Realize os cálculos de diferença percentual e levantamento das profissões mais equilibradas e mais desiguais por gênero e estado.
+[Resultado Esperado]
 
-Elabore os insights, destacando os pontos mais relevantes e os impactos sociais e profissionais que esses dados podem indicar.
+Apresente os resultados em uma tabela resumo com as colunas: | Profissão | % Masculino | % Feminino | Diferença Percentual |
+
+Depois, faça um resumo descritivo breve (3 a 5 linhas) destacando:
+
+A profissão mais equilibrada
+
+A mais desigual
+
+A de maior presença feminina
+
+A de maior presença masculina
+
+Se quiser, sugira visualizações que poderiam ilustrar os dados.
 
 [Dados]
 

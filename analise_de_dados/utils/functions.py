@@ -11,10 +11,7 @@ sys.path.append(os.path.abspath('../..'))
 import configs as cf
 cf.mapeia_pastas()
 
-def criar_conexao_db():
-    con = db.connect("../../ingestao_de_dados/database/db_distribuicao_profissoes.db")
-    return con
-
+con = cf.criar_conexao_db()
 
 ####################### FUNÇÕES QUE REALIZAM MANIPULAÇÃO DE DADOS #######################
 
