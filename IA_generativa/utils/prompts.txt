@@ -34,6 +34,8 @@ Elabore um resumo descritivo com os pontos mais relevantes.
 Apresente uma tabela com as seguintes colunas:
 | Profissão | % Masculino | % Feminino | Diferença Percentual |
 
+Por fim, elabore um comentário interpretativo explicando, com base em aspectos históricos, culturais e sociais, as possíveis causas para as diferenças de gênero observadas nas profissões analisadas.
+
 [Dados]
 
 advogados.json
