@@ -1,0 +1,7 @@
+groq
+json
+python-dotenv
+matplotlib
+numpy
+pandas
+duckdb

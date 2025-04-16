@@ -1,0 +1,58 @@
+[
+    {
+        "nome_estado":"São Paulo",
+        "advogadas":197236.0,
+        "contadoras":56528.0,
+        "engenheiras":53124.0,
+        "psicologas":132077.0,
+        "total_feminino":438965.0
+    },
+    {
+        "nome_estado":"Rio de Janeiro",
+        "advogadas":84602.0,
+        "contadoras":20288.0,
+        "engenheiras":23618.0,
+        "psicologas":50682.0,
+        "total_feminino":179190.0
+    },
+    {
+        "nome_estado":"Minas Gerais",
+        "advogadas":74205.0,
+        "contadoras":17903.0,
+        "engenheiras":32656.0,
+        "psicologas":48465.0,
+        "total_feminino":173229.0
+    },
+    {
+        "nome_estado":"Rio Grande do Sul",
+        "advogadas":51660.0,
+        "contadoras":12378.0,
+        "engenheiras":14061.0,
+        "psicologas":27680.0,
+        "total_feminino":105779.0
+    },
+    {
+        "nome_estado":"Paraná",
+        "advogadas":47022.0,
+        "contadoras":15933.0,
+        "engenheiras":13595.0,
+        "psicologas":27062.0,
+        "total_feminino":103612.0
+    },
+    {
+        "nome_estado":"Bahia",
+        "advogadas":33281.0,
+        "contadoras":9497.0,
+        "engenheiras":12202.0,
+        "psicologas":21113.0,
+        "total_feminino":76093.0
+    },
+    {
+        "nome_estado":"Santa Catarina",
+        "advogadas":27023.0,
+        "contadoras":9728.0,
+        "engenheiras":10400.0,
+        "psicologas":17963.0,
+        "total_feminino":65114.0
+    }
+]
