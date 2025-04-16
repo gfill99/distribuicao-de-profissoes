@@ -1,5 +1,4 @@
 # Importação das bibliotecas necessárias
-import duckdb as db
 import matplotlib.pyplot as plt
 import numpy as np
 import os
@@ -33,9 +32,9 @@ def contar_profissionais(con, genero_m, genero_f, profissao):
 
 # Função que distribui as quantidades de profissionais por gênero e profissão, por estado
 # Possui a opção de personalizar os nomes das colunas no caso de nomes femininos
-def distribuir_profissao_por_genero(con, genero, total_genero, nomes_femininos=False):
+def distribuir_profissao_por_genero(con, genero, total_genero):
     # Define o nome das colunas conforme o gênero selecionado
-    if nomes_femininos:
+    if genero == "F":
         nomes_colunas = {
             'advogados': 'advogadas',
             'contadores': 'contadoras',
@@ -116,7 +115,7 @@ def plotar_distribuicao_genero(df, profissoes, titulo, cor_legenda, genero_label
     x = np.arange(len(estados))
     width = 0.2
 
-    fig, ax = plt.subplots(figsize=(12, 6))
+    fig, ax = plt.subplots(figsize=(14, 8))
 
     # Adiciona as barras para cada profissão e estado
     for i, (label, cor) in enumerate(zip(profissoes, cor_legenda)):
