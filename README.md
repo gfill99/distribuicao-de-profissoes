@@ -62,14 +62,14 @@ distribuicao_profissao/
 ## ⚙️ Tecnologias e bibliotecas utilizadas
 
 - Python
+- SQL (para manipulação de dados e criação de tabelas)
 - DuckDB
 - Pandas
 - Matplotlib
-- Groq API (para IA generativa)
+- GROQ API (para IA generativa)
 - dotenv
 - JSON
-- Excel (para ingestão de dados)
-- SQL (para manipulação de dados e criação de tabelas)
+- Excel (para dados brutos de origem)
 - Git (para controle de versão)
 
 ---
@@ -84,9 +84,18 @@ distribuicao_profissao/
 2. Instale as dependências:
    ```bash
    pip install -r requirements.txt
+    ```
+    📄 O arquivo requirements.txt contém todas as bibliotecas necessárias para rodar o projeto corretamente.
 
 3. Configure suas variáveis de ambiente:
-    - **no arquivo ```.env``` (dentro de IA_generativa/utils).**
+    - **Acesse o site da Groq para criar sua chave de API: 🔗 https://console.groq.com/keys**
+
+    - **Copie a chave gerada e crie um arquivo chamado ```.env``` dentro da pasta ```IA_generativa/utils/```**
+
+    - **Dentro do .env, adicione a variável da seguinte forma:**
+      ```bash
+      GROQ_API_KEY=sua_chave_aqui
+      ```
 
 4. Execute os notebooks na seguinte ordem:
 
@@ -102,17 +111,17 @@ distribuicao_profissao/
 
 Os resultados das análises são armazenados na pasta analise_de_dados/result/ em formato JSON:
 
-- advogados.json — distribuição de advogados por gênero e estado
+- advogados.json - distribuição de advogados por gênero e estado
 
-- contadores.json — distribuição de contadores
+- contadores.json - distribuição de contadores
 
-- engenheiros.json — distribuição de engenheiros
+- engenheiros.json - distribuição de engenheiros
 
-- psicologos.json — distribuição de psicólogos
+- psicologos.json - distribuição de psicólogos
 
-- maiores_estados_masculino.json — estados com mais profissionais homens
+- maiores_estados_masculino.json - estados com mais profissionais homens
 
-- maiores_estados_feminino.json — estados com mais profissionais mulheres
+- maiores_estados_feminino.json - estados com mais profissionais mulheres
 
 ---
 
@@ -120,12 +129,10 @@ Os resultados das análises são armazenados na pasta analise_de_dados/result/ e
 
 - Os dados utilizados foram obtidos de fontes oficiais públicas e servem para fins educacionais e exploratórios. As fontes são:
 
-  - **OAB — Quadro de Advogados**
+  - **OAB - Quadro de Advogados**
 
-  - **CONFEA — Profissionais por Gênero**
+  - **CONFEA - Profissionais por Gênero**
 
-  - **CFP — Quantos Somos**
+  - **CFP - Quantos Somos**
 
-  - **CFC — Consulta por Região**
-
-- A aplicação de IA generativa utiliza um modelo LLama da Meta, acessado via Groq API. É necessário configurar a chave de API no arquivo ```.env``` localizado em ```IA_generativa/utils/.env.```
+  - **CFC - Consulta por Região**
