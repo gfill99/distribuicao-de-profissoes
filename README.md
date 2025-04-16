@@ -65,7 +65,7 @@ distribuicao_profissao/
 - DuckDB
 - Pandas
 - Matplotlib
-- OpenAI API (para IA generativa)
+- Groq API (para IA generativa)
 - dotenv
 - JSON
 - Excel (para ingestão de dados)
