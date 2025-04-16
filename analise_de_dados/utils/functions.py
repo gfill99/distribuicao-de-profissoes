@@ -1,3 +1,4 @@
+# Importação das bibliotecas necessárias
 import duckdb as db
 import matplotlib.pyplot as plt
 import numpy as np
@@ -6,16 +7,19 @@ import sys
 
 ####################### MAPEANDO E CRIANDO CONEXÃO COM BANCO DE DADOS #######################
 
+# Adicionando o caminho raiz ao sys.path para facilitar importações de outros diretórios do projeto
 sys.path.append(os.path.abspath('../..'))
 
+# Importa configurações e funções auxiliares
 import configs as cf
 cf.mapeia_pastas()
 
+# Cria a conexão com o banco de dados DuckDB
 con = cf.criar_conexao_db()
 
 ####################### FUNÇÕES QUE REALIZAM MANIPULAÇÃO DE DADOS #######################
 
-
+# Função que conta a quantidade total de profissionais (masculino + feminino) por profissão
 def contar_profissionais(con, genero_m, genero_f, profissao):    
     coluna_total = f"total_{profissao}"
     df = con.execute(f"""
@@ -27,8 +31,10 @@ def contar_profissionais(con, genero_m, genero_f, profissao):
     """).df()
     return df
 
-
+# Função que distribui as quantidades de profissionais por gênero e profissão, por estado
+# Possui a opção de personalizar os nomes das colunas no caso de nomes femininos
 def distribuir_profissao_por_genero(con, genero, total_genero, nomes_femininos=False):
+    # Define o nome das colunas conforme o gênero selecionado
     if nomes_femininos:
         nomes_colunas = {
             'advogados': 'advogadas',
@@ -59,18 +65,10 @@ def distribuir_profissao_por_genero(con, genero, total_genero, nomes_femininos=F
     """
     return con.execute(query).df()
 
-def ordena_query_profissão(con, genero, profissao):
-	profissao_genero = con.execute(f"""
-		SELECT nome_estado, {genero}_{profissao} AS total
-		FROM df_estados_profissoes
-		ORDER BY total DESC
-		LIMIT 7
-		""").df()
-	return profissao_genero
-
-
 ####################### FUNÇÕES QUE REALIZAM CRIAÇÃO DE GRÁFICOS #######################
 
+# Função que plota gráficos de barras horizontais para os estados com mais profissionais por profissão
+# Permite customizar as cores das barras
 def plotar_maiores_estados_profissoes(con, profissoes, cores=None):
     """
     Gera subplots horizontais mostrando os 5 estados com mais profissionais por profissão.
@@ -80,9 +78,11 @@ def plotar_maiores_estados_profissoes(con, profissoes, cores=None):
     - profissoes: lista de strings com os nomes das profissões (ex: ['advogados', 'contadores'])
     - cores: lista de cores na mesma ordem da lista de profissões (opcional)
     """
+    # Se não for especificada nenhuma cor, define todas como cinza padrão
     if cores is None:
         cores = ['#7f8c8d'] * len(profissoes)
 
+    # Lista para armazenar os dados que serão plotados
     dados = []
     for i, profissao in enumerate(profissoes):
         df = contar_profissionais(con, 'M', 'F', profissao)
@@ -90,31 +90,38 @@ def plotar_maiores_estados_profissoes(con, profissoes, cores=None):
         cor = cores[i] if i < len(cores) else '#7f8c8d'
         dados.append((df, coluna_total, profissao.capitalize(), cor))
 
+     # Cria a estrutura dos subplots
     fig, axs = plt.subplots(2, 2, figsize=(14, 10))
     fig.suptitle('Top Estados com mais profissionais por profissão', fontsize=16)
 
+    # Preenche cada subplot com os dados correspondentes
     for ax, (df, coluna, titulo, cor) in zip(axs.flat, dados):
         ax.barh(df['nome_estado'], df[coluna], color=cor)
         ax.set_title(titulo)
-        ax.invert_yaxis()
+        ax.invert_yaxis() # Coloca o maior valor no topo
+        # Adiciona as quantidades de profissionais ao lado das barras
         for i, v in enumerate(df[coluna]):
             ax.text(v + max(df[coluna]) * 0.01, i, f'{int(v):,}'.replace(',', '.'), va='center', fontsize=9)
 
     plt.tight_layout(rect=[0, 0, 1, 0.95])
     plt.show()
 
-
+# Função que plota gráfico de barras agrupadas para mostrar a distribuição de profissionais por gênero e profissão
 def plotar_distribuicao_genero(df, profissoes, titulo, cor_legenda, genero_label):
+    # Extrai os estados e os valores das colunas de cada profissão
     estados = df['nome_estado'].tolist()
     valores = [df[prof].values for prof in profissoes]
     
+    # Define a posição das barras no eixo X e a largura delas
     x = np.arange(len(estados))
     width = 0.2
 
     fig, ax = plt.subplots(figsize=(12, 6))
 
+    # Adiciona as barras para cada profissão e estado
     for i, (label, cor) in enumerate(zip(profissoes, cor_legenda)):
         bars = ax.bar(x + i * width, valores[i], width, label=label.capitalize(), color=cor)
+        # Adiciona os valores acima de cada barra
         for bar in bars:
             height = bar.get_height()
             ax.annotate(f'{int(height):,}'.replace(',', '.'),
@@ -133,7 +140,7 @@ def plotar_distribuicao_genero(df, profissoes, titulo, cor_legenda, genero_label
 
 ####################### FUNÇÃO PARA SALVAR ARQUIVOS JSON FINAIS #######################
 
-
+# Função que salva múltiplos DataFrames em arquivos JSON no diretório especificado
 def salvar_json(dataframes, pasta_resultados='../result'):
     # Caminho correto para a pasta result
     caminho_pasta = os.path.join(os.getcwd(), pasta_resultados)
