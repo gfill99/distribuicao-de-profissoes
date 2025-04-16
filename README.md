@@ -95,6 +95,7 @@ distribuicao_profissao/
     - **Dentro do .env, adicione a variável da seguinte forma:**
       ```bash
       GROQ_API_KEY=sua_chave_aqui
+      ```
 
 4. Execute os notebooks na seguinte ordem:
 
